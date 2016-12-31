@@ -2,6 +2,7 @@
 A small app that integrates with Makey Makey to build salads
 
 Setup:
+
 1. Run 'npm install'
 
 1. Compile css and start gulp watch task - run 'gulp'
