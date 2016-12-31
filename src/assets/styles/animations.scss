@@ -1,0 +1,28 @@
+@keyframes shake {
+  10% {transform: rotate(10deg)};
+  20% {transform: rotate(-10deg)};
+  30% {transform: rotate(7deg)};
+  40% {transform: rotate(-5deg)};
+  50% {transform: rotate(5deg)};
+  60% {transform: rotate(-3deg)};
+  70% {transform: rotate(3deg)};
+  80% {transform: rotate(-1deg)};
+  90% {transform: rotate(1deg)};
+  100% {transform: rotate(0deg)};
+}
+@keyframes intro {
+  10% { background-color: blue;}
+  40% { background-color: purple;}
+}
+
+@keyframes stroke-offset {
+  50% {
+    stroke-dashoffset: 7% * 5;
+    stroke-dasharray: 0 7% * 5 *1.5;
+  }
+}
+
+// @keyframes fall {
+//   0% { bottom: 100vh; }
+//   100% { bottom: 27vh;}
+// }

@@ -1,0 +1,108 @@
+$max: 5;
+$stroke-step: 7%;
+$colors: #13606B, #1F9BAD, #52CEE0, #A8E6F0, #E9F9FB;
+
+.container__outer {
+  animation: intro 3s;
+  background-color: teal;
+  background-size: .12em 100%;
+  display: inline-block;
+  float: right;
+  font: 16em/1 Arial;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.salad-bowl {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  animation: shake 2s ease-in-out;
+  width: 50%;
+}
+
+.veggies {
+  width: 10%;
+  height: 100vh;
+  display: none;
+}
+
+.vegetable {
+  width: 100%;
+  height: 20%;
+  &:hover {
+    animation: shake 2s;
+  }
+}
+.salad-vegetable {
+  height: 200px;
+  position: absolute;
+  width: 200px;
+  transition: transform 2s linear;
+}
+
+div[data-veg='carrot'] {
+  background: url('/src/assets/images/carrot.svg') no-repeat center/contain;
+}
+
+div[data-veg='radish'] {
+  background: url('/src/assets/images/radish.svg') no-repeat center/contain;
+}
+
+div[data-veg='cucumber'] {
+  background: url('/src/assets/images/cucumber-whole.svg') no-repeat center/contain;
+}
+
+div[data-veg='tomato'] {
+  background: url('/src/assets/images/tomato-whole.svg') no-repeat center/contain;
+}
+
+div[data-veg='broccoli'] {
+  background: url('/src/assets/images/broccoli-whole.svg') no-repeat center/contain;
+}
+
+.instructions {
+  color: white;
+  display: none;
+  font: 0.175em Arial;
+  height: 10%;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.text-line-1 {
+  font-size: .3em;
+}
+
+.text-line-2 {
+  font-size: 0.9em;
+}
+
+.click-here {
+  font-size: .15em;
+}
+
+svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.text-copy {
+  animation: stroke-offset 5s infinite ease-in-out;
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 28% 7%;
+  stroke-width: 3px;
+
+  @for $item from 1 through $max {
+    $stroke-color: nth($colors, $item);
+
+    &:nth-child(#{$item}) {
+      stroke: $stroke-color;
+      stroke-dashoffset: $stroke-step * $item;
+    }
+  }
+}

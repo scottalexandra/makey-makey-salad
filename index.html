@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Makey Makey Salad</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/node_modules/material-design-lite/dist/material.css">
+    <link rel="stylesheet" href="./dest/assets/styles/css/main.css">
+
+    <script src="node_modules/traceur/bin/traceur.js"></script>
+    <script src="node_modules/es6-module-loader/dist/es6-module-loader-dev.js"></script>
+    <script src="node_modules/material-design-lite/dist/material.js"></script>
+  </head>
+  <body>
+    <script>
+      System.paths['jquery'] = './node_modules/jquery/dist/jquery.js';
+      System.import('src/app.js');
+    </script>
+    <div class="veggies">
+      <div class="vegetable" data-veg="broccoli"></div>
+      <div class="vegetable" data-veg="radish"></div>
+      <div class="vegetable" data-veg="cucumber"></div>
+      <div class="vegetable" data-veg="carrot"></div>
+      <div class="vegetable" data-veg="tomato"></div>
+    </div>
+    <div class="container__outer">
+        <div class="instructions">
+          Tap items to add to the salad
+        </div>
+        <svg>
+          <symbol id="heading">
+            <text text-anchor="middle" x="50%" y="15%" class="text-line-1">
+              Makey Makey
+            </text>
+            <text text-anchor="middle" x="50%" y="39%" class="text-line-2">
+              Salad
+            </text>
+            <text text-anchor="middle" x="50%" y="45%" class="click-here">
+              Click To Begin
+            </text>
+          </symbol>
+          <g>
+            <use href="#heading" class="text-copy"></use>
+            <use href="#heading" class="text-copy"></use>
+            <use href="#heading" class="text-copy"></use>
+            <use href="#heading" class="text-copy"></use>
+          </g>
+        </svg>
+        <div class="container__salad-bowl" id="salad">
+          <img class="salad-bowl" src="/src/assets/images/bowl-lettuce.svg" alt="salad-bowl" />
+        </div>
+    </div>
+
+  </body>
+</html>
